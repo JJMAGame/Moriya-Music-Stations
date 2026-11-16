@@ -1,0 +1,62 @@
+2026-11-16 16:36:26,377 [INFO] in AsyncAppender-Worker-ASYNCSTDOUT - [[34mINFO [0;39m] c.jpro.activity - Starting the server - AsyncAppender-Worker-ASYNCSTDOUT
+2026-11-16 16:36:26,377 [INFO] in AsyncAppender-Worker-ASYNCSTDOUT - [[34mINFO [0;39m] c.j.i.s.JProInitializer$ -  *** Starting JPro: https://www.jpro.one/ *** - AsyncAppender-Worker-ASYNCSTDOUT
+2026-11-16 16:36:26,377 [INFO] in AsyncAppender-Worker-ASYNCSTDOUT - [[34mINFO [0;39m] c.j.i.s.JProInitializer$ - OS: Windows 11 - AsyncAppender-Worker-ASYNCSTDOUT
+2026-11-16 16:36:26,384 [INFO] in AsyncAppender-Worker-ASYNCSTDOUT - [[34mINFO [0;39m] c.j.i.s.JProInitializer$ - JPro: 2024.4.0 - AsyncAppender-Worker-ASYNCSTDOUT
+2026-11-16 16:36:26,384 [INFO] in AsyncAppender-Worker-ASYNCSTDOUT - [[34mINFO [0;39m] c.j.i.s.JProInitializer$ - Java version: 25.0.5 - AsyncAppender-Worker-ASYNCSTDOUT
+2026-11-16 16:36:26,384 [INFO] in AsyncAppender-Worker-ASYNCSTDOUT - [[34mINFO [0;39m] c.j.i.s.JProInitializer$ - JVM: 25.0.5 Eclipse Adoptium - AsyncAppender-Worker-ASYNCSTDOUT
+2026-11-16 16:36:26,385 [INFO] in AsyncAppender-Worker-ASYNCSTDOUT - [[34mINFO [0;39m] c.j.i.s.JProInitializer$ - JavaFX jar: file:/C:/Users/jorgi/.m2/repository/org/openjfx/javafx-graphics/23.0.1-jpro/javafx-graphics-23.0.1-jpro-win.jar - AsyncAppender-Worker-ASYNCSTDOUT
+2026-11-16 16:36:26,387 [INFO] in AsyncAppender-Worker-ASYNCSTDOUT - [[34mINFO [0;39m] c.j.i.s.JProInitializer$ - Configuring logging from url: 'jar:file:/C:/Users/jorgi/.m2/repository/com/sandec/jpro/jpro-server_2.12/2024.4.0/jpro-server_2.12-2024.4.0.jar!/logback-jpro-default.xml' - AsyncAppender-Worker-ASYNCSTDOUT
+2026-11-16 16:36:26,921 [INFO] in AsyncAppender-Worker-ASYNCSTDOUT - [[34mINFO [0;39m] c.j.i.s.JProInitializer$ - JavaFX version: 23.0.1-jpro+0 - AsyncAppender-Worker-ASYNCSTDOUT
+2026-11-16 16:36:26,947 [INFO] in JavaFX Application Thread - G1 Young Generation - JavaFX Application Thread
+2026-11-16 16:36:26,947 [INFO] in JavaFX Application Thread - G1 Concurrent GC - JavaFX Application Thread
+2026-11-16 16:36:26,947 [INFO] in JavaFX Application Thread - G1 Old Generation - JavaFX Application Thread
+2026-11-16 16:36:26,959 [INFO] in AsyncAppender-Worker-ASYNCSTDOUT - [[34mINFO [0;39m] c.j.i.s.JProInitializer$ - finished init! - AsyncAppender-Worker-ASYNCSTDOUT
+2026-11-16 16:36:26,965 [INFO] in AsyncAppender-Worker-ASYNCSTDOUT - [[34mINFO [0;39m] c.j.i.s.JProInitializer$ - [JPro] -> Server started: {start_time: 1794857786361, os_name: Windows 11, jpro_version: 2024.4.0} - AsyncAppender-Worker-ASYNCSTDOUT
+2026-11-16 16:36:27,102 [INFO] in AsyncAppender-Worker-ASYNCSTDOUT - [[34mINFO [0;39m] a.e.s.Slf4jLogger - Slf4jLogger started - AsyncAppender-Worker-ASYNCSTDOUT
+2026-11-16 16:36:27,554 [INFO] in AsyncAppender-Worker-ASYNCSTDOUT - [[34mINFO [0;39m] play.api.Play - Application started (Prod) (no global state) - AsyncAppender-Worker-ASYNCSTDOUT
+2026-11-16 16:36:27,955 [INFO] in AsyncAppender-Worker-ASYNCSTDOUT - [[34mINFO [0;39m] p.c.s.AkkaHttpServer - Enabling HTTP/2 on Akka HTTP server... - AsyncAppender-Worker-ASYNCSTDOUT
+2026-11-16 16:36:27,956 [INFO] in AsyncAppender-Worker-ASYNCSTDOUT - [[34mINFO [0;39m] p.c.s.AkkaHttpServer - Listening for HTTP on /[0:0:0:0:0:0:0:0]:8080 - AsyncAppender-Worker-ASYNCSTDOUT
+2026-11-16 16:36:29,045 [INFO] in AsyncAppender-Worker-ASYNCSTDOUT - [[34mINFO [0;39m] c.jpro - application requested: default params: Map() - AsyncAppender-Worker-ASYNCSTDOUT
+2026-11-16 16:36:29,047 [INFO] in AsyncAppender-Worker-ASYNCSTDOUT - [[34mINFO [0;39m] c.jpro - Creating Application: default - AsyncAppender-Worker-ASYNCSTDOUT
+2026-11-16 16:36:29,048 [INFO] in AsyncAppender-Worker-ASYNCSTDOUT - [[34mINFO [0;39m] c.jpro - remoteAddress 0:0:0:0:0:0:0:1 - AsyncAppender-Worker-ASYNCSTDOUT
+2026-11-16 16:36:29,048 [INFO] in AsyncAppender-Worker-ASYNCSTDOUT - [[34mINFO [0;39m] c.jpro - host          localhost:8080 - AsyncAppender-Worker-ASYNCSTDOUT
+2026-11-16 16:36:29,048 [INFO] in AsyncAppender-Worker-ASYNCSTDOUT - [[34mINFO [0;39m] c.jpro - uri           /app/ws/default - AsyncAppender-Worker-ASYNCSTDOUT
+2026-11-16 16:36:29,232 [INFO] in AsyncAppender-Worker-ASYNCSTDOUT - [[34mINFO [0;39m] c.j.i.s.ViewInfo$ - [JPro] -> View created: {app_name: default, host_name: localhost:8080, instance_id: 302083719, browser: Google Chrome 157.0.0.0, browser_url: http://localhost:8080/, client_ip: 0:0:0:0:0:0:0:1} - AsyncAppender-Worker-ASYNCSTDOUT
+2026-11-16 16:36:29,418 [INFO] in AsyncAppender-Worker-ASYNCSTDOUT - [[34mINFO [0;39m] c.j.i.c.InstanceImpl - [JPro] -> Instance created: {app_name: default, host_name: localhost:8080, instance_id: 302083719, browser: Google Chrome 157.0.0.0, browser_url: http://localhost:8080/, client_ip: 0:0:0:0:0:0:0:1} - AsyncAppender-Worker-ASYNCSTDOUT
+2026-11-16 16:40:00,961 [INFO] in AsyncAppender-Worker-ASYNCSTDOUT - [[34mINFO [0;39m] c.jpro.activity - Starting the server - AsyncAppender-Worker-ASYNCSTDOUT
+2026-11-16 16:40:00,961 [INFO] in AsyncAppender-Worker-ASYNCSTDOUT - [[34mINFO [0;39m] c.j.i.s.JProInitializer$ -  *** Starting JPro: https://www.jpro.one/ *** - AsyncAppender-Worker-ASYNCSTDOUT
+2026-11-16 16:40:00,961 [INFO] in AsyncAppender-Worker-ASYNCSTDOUT - [[34mINFO [0;39m] c.j.i.s.JProInitializer$ - OS: Windows 11 - AsyncAppender-Worker-ASYNCSTDOUT
+2026-11-16 16:40:00,967 [INFO] in AsyncAppender-Worker-ASYNCSTDOUT - [[34mINFO [0;39m] c.j.i.s.JProInitializer$ - JPro: 2024.4.0 - AsyncAppender-Worker-ASYNCSTDOUT
+2026-11-16 16:40:00,967 [INFO] in AsyncAppender-Worker-ASYNCSTDOUT - [[34mINFO [0;39m] c.j.i.s.JProInitializer$ - Java version: 25.0.5 - AsyncAppender-Worker-ASYNCSTDOUT
+2026-11-16 16:40:00,967 [INFO] in AsyncAppender-Worker-ASYNCSTDOUT - [[34mINFO [0;39m] c.j.i.s.JProInitializer$ - JVM: 25.0.5 Eclipse Adoptium - AsyncAppender-Worker-ASYNCSTDOUT
+2026-11-16 16:40:00,969 [INFO] in AsyncAppender-Worker-ASYNCSTDOUT - [[34mINFO [0;39m] c.j.i.s.JProInitializer$ - JavaFX jar: file:/C:/Users/jorgi/.m2/repository/org/openjfx/javafx-graphics/23.0.1-jpro/javafx-graphics-23.0.1-jpro-win.jar - AsyncAppender-Worker-ASYNCSTDOUT
+2026-11-16 16:40:00,970 [INFO] in AsyncAppender-Worker-ASYNCSTDOUT - [[34mINFO [0;39m] c.j.i.s.JProInitializer$ - Configuring logging from url: 'jar:file:/C:/Users/jorgi/.m2/repository/com/sandec/jpro/jpro-server_2.12/2024.4.0/jpro-server_2.12-2024.4.0.jar!/logback-jpro-default.xml' - AsyncAppender-Worker-ASYNCSTDOUT
+2026-11-16 16:40:01,395 [INFO] in AsyncAppender-Worker-ASYNCSTDOUT - [[34mINFO [0;39m] c.j.i.s.JProInitializer$ - JavaFX version: 23.0.1-jpro+0 - AsyncAppender-Worker-ASYNCSTDOUT
+2026-11-16 16:40:01,431 [INFO] in JavaFX Application Thread - G1 Young Generation - JavaFX Application Thread
+2026-11-16 16:40:01,431 [INFO] in JavaFX Application Thread - G1 Concurrent GC - JavaFX Application Thread
+2026-11-16 16:40:01,431 [INFO] in JavaFX Application Thread - G1 Old Generation - JavaFX Application Thread
+2026-11-16 16:40:01,444 [INFO] in AsyncAppender-Worker-ASYNCSTDOUT - [[34mINFO [0;39m] c.j.i.s.JProInitializer$ - finished init! - AsyncAppender-Worker-ASYNCSTDOUT
+2026-11-16 16:40:01,445 [INFO] in AsyncAppender-Worker-ASYNCSTDOUT - [[34mINFO [0;39m] c.j.i.s.JProInitializer$ - [JPro] -> Server started: {start_time: 1794858000949, os_name: Windows 11, jpro_version: 2024.4.0} - AsyncAppender-Worker-ASYNCSTDOUT
+2026-11-16 16:40:01,554 [INFO] in AsyncAppender-Worker-ASYNCSTDOUT - [[34mINFO [0;39m] a.e.s.Slf4jLogger - Slf4jLogger started - AsyncAppender-Worker-ASYNCSTDOUT
+2026-11-16 16:40:01,920 [INFO] in AsyncAppender-Worker-ASYNCSTDOUT - [[34mINFO [0;39m] play.api.Play - Application started (Prod) (no global state) - AsyncAppender-Worker-ASYNCSTDOUT
+2026-11-16 16:40:02,237 [INFO] in AsyncAppender-Worker-ASYNCSTDOUT - [[34mINFO [0;39m] p.c.s.AkkaHttpServer - Enabling HTTP/2 on Akka HTTP server... - AsyncAppender-Worker-ASYNCSTDOUT
+2026-11-16 16:40:02,237 [INFO] in AsyncAppender-Worker-ASYNCSTDOUT - [[34mINFO [0;39m] p.c.s.AkkaHttpServer - Listening for HTTP on /[0:0:0:0:0:0:0:0]:8080 - AsyncAppender-Worker-ASYNCSTDOUT
+2026-11-16 16:40:03,168 [INFO] in AsyncAppender-Worker-ASYNCSTDOUT - [[34mINFO [0;39m] c.jpro - application requested: default params: Map() - AsyncAppender-Worker-ASYNCSTDOUT
+2026-11-16 16:40:03,171 [INFO] in AsyncAppender-Worker-ASYNCSTDOUT - [[34mINFO [0;39m] c.jpro - Creating Application: default - AsyncAppender-Worker-ASYNCSTDOUT
+2026-11-16 16:40:03,173 [INFO] in AsyncAppender-Worker-ASYNCSTDOUT - [[34mINFO [0;39m] c.jpro - remoteAddress 0:0:0:0:0:0:0:1 - AsyncAppender-Worker-ASYNCSTDOUT
+2026-11-16 16:40:03,173 [INFO] in AsyncAppender-Worker-ASYNCSTDOUT - [[34mINFO [0;39m] c.jpro - host          localhost:8080 - AsyncAppender-Worker-ASYNCSTDOUT
+2026-11-16 16:40:03,173 [INFO] in AsyncAppender-Worker-ASYNCSTDOUT - [[34mINFO [0;39m] c.jpro - uri           /app/ws/default - AsyncAppender-Worker-ASYNCSTDOUT
+2026-11-16 16:40:03,349 [INFO] in AsyncAppender-Worker-ASYNCSTDOUT - [[34mINFO [0;39m] c.j.i.s.ViewInfo$ - [JPro] -> View created: {app_name: default, host_name: localhost:8080, instance_id: 1752315678, browser: Google Chrome 157.0.0.0, browser_url: http://localhost:8080/, client_ip: 0:0:0:0:0:0:0:1} - AsyncAppender-Worker-ASYNCSTDOUT
+2026-11-16 16:40:03,535 [INFO] in AsyncAppender-Worker-ASYNCSTDOUT - [[34mINFO [0;39m] c.j.i.c.InstanceImpl - [JPro] -> Instance created: {app_name: default, host_name: localhost:8080, instance_id: 1752315678, browser: Google Chrome 157.0.0.0, browser_url: http://localhost:8080/, client_ip: 0:0:0:0:0:0:0:1} - AsyncAppender-Worker-ASYNCSTDOUT
+2026-11-16 16:40:07,504 [INFO] in AsyncAppender-Worker-ASYNCSTDOUT - [[34mINFO [0;39m] c.j.i.s.ViewInfo$ - [JPro] -> View closed: {app_name: default, host_name: localhost:8080, instance_id: 1752315678, browser: Google Chrome 157.0.0.0, browser_url: http://localhost:8080/, client_ip: 0:0:0:0:0:0:0:1, reason: tab-closed} - AsyncAppender-Worker-ASYNCSTDOUT
+2026-11-16 16:40:07,505 [INFO] in AsyncAppender-Worker-ASYNCSTDOUT - [[34mINFO [0;39m] c.j.i.s.ViewInfo$ -  - AsyncAppender-Worker-ASYNCSTDOUT
+2026-11-16 16:40:07,505 [INFO] in AsyncAppender-Worker-ASYNCSTDOUT - [[34mINFO [0;39m] c.j.i.s.ViewInfo$ - Application closed: - AsyncAppender-Worker-ASYNCSTDOUT
+2026-11-16 16:40:07,515 [INFO] in AsyncAppender-Worker-ASYNCSTDOUT - [[34mINFO [0;39m] c.j.i.s.ViewInfo$ - startTime      : Mon Nov 16 16:40:07 GMT-03:00 2026       - AsyncAppender-Worker-ASYNCSTDOUT
+2026-11-16 16:40:07,515 [INFO] in AsyncAppender-Worker-ASYNCSTDOUT - [[34mINFO [0;39m] c.j.i.s.ViewInfo$ - averageLatency : 00:00:00.001  - AsyncAppender-Worker-ASYNCSTDOUT
+2026-11-16 16:40:07,515 [INFO] in AsyncAppender-Worker-ASYNCSTDOUT - [[34mINFO [0;39m] c.j.i.s.ViewInfo$ - averageJitter  : 00:00:00.001   - AsyncAppender-Worker-ASYNCSTDOUT
+2026-11-16 16:40:07,515 [INFO] in AsyncAppender-Worker-ASYNCSTDOUT - [[34mINFO [0;39m] c.j.i.s.ViewInfo$ - framerateServer: 00:00:00.000 - AsyncAppender-Worker-ASYNCSTDOUT
+2026-11-16 16:40:07,517 [INFO] in AsyncAppender-Worker-ASYNCSTDOUT - [[34mINFO [0;39m] c.j.i.s.ViewInfo$ - framerateClient: 00:00:00.000 - AsyncAppender-Worker-ASYNCSTDOUT
+2026-11-16 16:40:07,517 [INFO] in AsyncAppender-Worker-ASYNCSTDOUT - [[34mINFO [0;39m] c.j.i.s.ViewInfo$ - raw            : 47080 - AsyncAppender-Worker-ASYNCSTDOUT
+2026-11-16 16:40:07,517 [INFO] in AsyncAppender-Worker-ASYNCSTDOUT - [[34mINFO [0;39m] c.j.i.s.ViewInfo$ - zipped         : 12007 - AsyncAppender-Worker-ASYNCSTDOUT
+2026-11-16 16:40:07,517 [INFO] in AsyncAppender-Worker-ASYNCSTDOUT - [[34mINFO [0;39m] c.j.i.s.ViewInfo$ -  - AsyncAppender-Worker-ASYNCSTDOUT
+2026-11-16 16:40:08,503 [INFO] in AsyncAppender-Worker-ASYNCSTDOUT - [[34mINFO [0;39m] c.j.i.c.InstanceImpl - [JPro] -> Instance closed: {app_name: default, host_name: localhost:8080, instance_id: 1752315678, browser: Google Chrome 157.0.0.0, browser_url: http://localhost:8080/, client_ip: 0:0:0:0:0:0:0:1, reason: close-tab-closed} - AsyncAppender-Worker-ASYNCSTDOUT
