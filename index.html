@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clone hero - Moriya Hero Setlist</title>
+    <title>Moriya hero - Moriya Hero Setlist</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -508,7 +508,7 @@
                     🎵 Setlists
                     <span class="contador" id="contadorEventos">—</span>
                 </h2>
-                <button type="button" class="btn-secundario" id="btnToggleTodos">Recolher tudo</button>
+                <button type="button" class="btn-secundario" id="btnToggleTodos">Expandir tudo</button>
             </div>
 
             <div class="eventos-scroll" id="eventosScroll">
@@ -683,7 +683,7 @@
                     : '';
 
                 html += `
-                    <article class="evento-card">
+                    <article class="evento-card collapsed">
                         <div class="evento-titulo">
                             <h2>
                                 <span class="icon" aria-hidden="true">📌</span>
@@ -693,7 +693,7 @@
                                 ${badgeHtml}
                                 <span class="mapas-count">${mapas.length} ${mapas.length === 1 ? 'música' : 'músicas'}</span>
                                 ${downloadHtml}
-                                <button type="button" class="btn-toggle" aria-expanded="true" aria-label="Recolher setlist ${escapeHtml(evento.nome)}" title="Expandir / recolher">
+                                <button type="button" class="btn-toggle" aria-expanded="false" aria-label="Expandir setlist ${escapeHtml(evento.nome)}" title="Expandir / recolher">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                         <polyline points="6 9 12 15 18 9"></polyline>
                                     </svg>

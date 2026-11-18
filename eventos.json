@@ -7,7 +7,7 @@
         "mapas": [
             {
                 "nome": "Bill Kiley - Chinatown",
-                "base": 1,
+                "base": 3,
                 "dificuldade": "1,2,3,4"
             },
             {
@@ -17,22 +17,22 @@
             },
             {
                 "nome": "Knife Party - Internet Friends (VIP)",
-                "base": 1,
+                "base": 3,
                 "dificuldade": "1,2,3,4"
             },
             {
                 "nome": "meganeko - The Cyber Grind",
-                "base": 1,
+                "base": 5,
                 "dificuldade": "1,2,3,4"
             },
             {
                 "nome": "Michael Hunter - Soviet Connection",
-                "base": 1,
+                "base": 3,
                 "dificuldade": "1,2,3,4"
             },
             {
                 "nome": "Mike Morasky - Gallery",
-                "base": 1,
+                "base": 6,
                 "dificuldade": "1,2,3,4"
             },
             {
@@ -57,42 +57,42 @@
             },
             {
                 "nome": "The Immortals - Techno Syndrome (Mortal Kombat)",
-                "base": 1,
+                "base": 3,
                 "dificuldade": "1,2,3,4"
             },
             {
                 "nome": "The Weeknd - Blinding Lights",
-                "base": 1,
+                "base": 2,
                 "dificuldade": "1,2,3,4"
             },
             {
                 "nome": "Tomoya Ohtani (feat. Tyler Smith & Andy Bane) - Infinite",
-                "base": 1,
+                "base": 4,
                 "dificuldade": "1,2,3,4"
             },
             {
                 "nome": "Video Game Orchestra (feat. David Vives) - Snake Eater (Live at Brazil Game Show 2019)",
-                "base": 1,
+                "base": 4,
                 "dificuldade": "1,2,3,4"
             },
             {
                 "nome": "Yooh - Hercules",
-                "base": 1,
+                "base": 5,
                 "dificuldade": "1,2,3,4"
             },
                         {
                 "nome": "Casey Edwards (feat. Victor Borba) - Bury the Light",
-                "base": 1,
+                "base": 3,
                 "dificuldade": "1,2,3,4"
             },
             {
                 "nome": "Darren Korb - God of the Dead",
-                "base": 1,
+                "base": 3,
                 "dificuldade": "1,2,3,4"
             },
             {
                 "nome": "kfaraday - Solar Bowler",
-                "base": 1,
+                "base": 6,
                 "dificuldade": "1,2,3,4"
             },
             {
@@ -102,37 +102,37 @@
             },
             {
                 "nome": "Van Halen - Little Guitars",
-                "base": 1,
+                "base": 4,
                 "dificuldade": "1,2,3,4"
             },
             {
                 "nome": "Born of Osiris - Follow the Signs",
-                "base": 1,
+                "base": 3,
                 "dificuldade": "4"
             },
             {
                 "nome": "Jeff Loomis - Miles of Machines",
-                "base": 1,
+                "base": 6,
                 "dificuldade": "4"
             },
             {
                 "nome": "Fresno - Diga Parte 2",
-                "base": 1,
+                "base": 2,
                 "dificuldade": "4"
             },
             {
                 "nome": "Edu Falaschi - Spread Your Fire",
-                "base": 1,
+                "base": 5,
                 "dificuldade": "4"
             },
             {
                 "nome": "Avenged Sevenfold - Save Me",
-                "base": 1,
+                "base": 4,
                 "dificuldade": "4"
             },
             {
                 "nome": "LeaF - Wizdomiot",
-                "base": 1,
+                "base": 6,
                 "dificuldade": "1,2,3,4"
             },
             {
