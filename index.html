@@ -756,7 +756,9 @@
         /* ============================================================
            CARREGAMENTO DO JSON
         ============================================================ */
-        fetch('eventos.json')
+        // O GitHub Pages/CDN costuma guardar o JSON em cache por vários minutos.
+        // O parâmetro de versão + no-store garante que os níveis atualizados apareçam.
+        fetch(`eventos.json?v=${Date.now()}`, { cache: 'no-store' })
             .then(response => {
                 if (!response.ok) throw new Error('Erro ao carregar o JSON');
                 return response.json();

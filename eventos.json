@@ -80,7 +80,7 @@
                 "base": 5,
                 "dificuldade": "1,2,3,4"
             },
-                        {
+            {
                 "nome": "Casey Edwards (feat. Victor Borba) - Bury the Light",
                 "base": 3,
                 "dificuldade": "1,2,3,4"
@@ -145,4 +145,3 @@
         "rainbow": true
     }
 ]
-
