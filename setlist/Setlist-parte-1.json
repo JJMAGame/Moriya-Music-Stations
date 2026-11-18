@@ -1,0 +1,147 @@
+[
+    {
+        "nome": "Moriya Music Stations - Parte 1 (A Grande Estreia do Show)",
+        "dataInicio": "",
+        "dataFim": "",
+        "linkDownload": "https://github.com/JJMAGame/Moriya-Music-Stations/releases/tag/setlistpersonalizado",
+        "mapas": [
+            {
+                "nome": "Bill Kiley - Chinatown",
+                "base": 3,
+                "dificuldade": "1,2,3,4"
+            },
+            {
+                "nome": "Carl Norén - Bullet Rain",
+                "base": 1,
+                "dificuldade": "1,2,3,4"
+            },
+            {
+                "nome": "Knife Party - Internet Friends (VIP)",
+                "base": 3,
+                "dificuldade": "1,2,3,4"
+            },
+            {
+                "nome": "meganeko - The Cyber Grind",
+                "base": 5,
+                "dificuldade": "1,2,3,4"
+            },
+            {
+                "nome": "Michael Hunter - Soviet Connection",
+                "base": 3,
+                "dificuldade": "1,2,3,4"
+            },
+            {
+                "nome": "Mike Morasky - Gallery",
+                "base": 6,
+                "dificuldade": "1,2,3,4"
+            },
+            {
+                "nome": "Muse - Uprising (Does It Offend You, Yeah Remix)",
+                "base": 1,
+                "dificuldade": "1,2,3,4"
+            },
+            {
+                "nome": "Porter Robinson - Look at the Sky",
+                "base": 1,
+                "dificuldade": "1,2,3,4"
+            },
+            {
+                "nome": "Richard Jacques - Super Sonic Racing (feat. TJ Davis)",
+                "base": 1,
+                "dificuldade": "1,2,3,4"
+            },
+            {
+                "nome": "Skrillex & Alvin Risk - Try It Out (Jack Wall & Trent Reznor remix)",
+                "base": 1,
+                "dificuldade": "1,2,3,4"
+            },
+            {
+                "nome": "The Immortals - Techno Syndrome (Mortal Kombat)",
+                "base": 3,
+                "dificuldade": "1,2,3,4"
+            },
+            {
+                "nome": "The Weeknd - Blinding Lights",
+                "base": 2,
+                "dificuldade": "1,2,3,4"
+            },
+            {
+                "nome": "Tomoya Ohtani (feat. Tyler Smith & Andy Bane) - Infinite",
+                "base": 4,
+                "dificuldade": "1,2,3,4"
+            },
+            {
+                "nome": "Video Game Orchestra (feat. David Vives) - Snake Eater (Live at Brazil Game Show 2019)",
+                "base": 4,
+                "dificuldade": "1,2,3,4"
+            },
+            {
+                "nome": "Yooh - Hercules",
+                "base": 5,
+                "dificuldade": "1,2,3,4"
+            },
+            {
+                "nome": "Casey Edwards (feat. Victor Borba) - Bury the Light",
+                "base": 3,
+                "dificuldade": "1,2,3,4"
+            },
+            {
+                "nome": "Darren Korb - God of the Dead",
+                "base": 3,
+                "dificuldade": "1,2,3,4"
+            },
+            {
+                "nome": "kfaraday - Solar Bowler",
+                "base": 6,
+                "dificuldade": "1,2,3,4"
+            },
+            {
+                "nome": "Revolver Ocelot - Ocelot Gun Twirling Scene",
+                "base": 1,
+                "dificuldade": "1,2,3,4"
+            },
+            {
+                "nome": "Van Halen - Little Guitars",
+                "base": 4,
+                "dificuldade": "1,2,3,4"
+            },
+            {
+                "nome": "Born of Osiris - Follow the Signs",
+                "base": 3,
+                "dificuldade": "4"
+            },
+            {
+                "nome": "Jeff Loomis - Miles of Machines",
+                "base": 6,
+                "dificuldade": "4"
+            },
+            {
+                "nome": "Fresno - Diga Parte 2",
+                "base": 2,
+                "dificuldade": "4"
+            },
+            {
+                "nome": "Edu Falaschi - Spread Your Fire",
+                "base": 5,
+                "dificuldade": "4"
+            },
+            {
+                "nome": "Avenged Sevenfold - Save Me",
+                "base": 4,
+                "dificuldade": "4"
+            },
+            {
+                "nome": "LeaF - Wizdomiot",
+                "base": 6,
+                "dificuldade": "1,2,3,4"
+            },
+            {
+                "nome": "Nobuo Uematsu - Super Smash Bros. Brawl Main Theme",
+                "base": 1,
+                "dificuldade": "4"
+            }
+        ],
+        "videoId": "",
+        "rainbow": true
+    }
+]
