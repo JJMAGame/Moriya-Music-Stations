@@ -1,0 +1,14 @@
+[
+    {
+        "nome": "Moriya Music Stations - Part 1 (Estreia)",
+        "dataInicio": "2026-07-31T18:00:00",
+        "dataFim": "2026-08-01T00:00:00",
+        "mapas": [
+            { "nome": "Yiresa - Black East", "base": 6, "dificuldade": "1" },
+            { "nome": "Sequoia - Forest Fight", "base": 45, "dificuldade": "2,3" },
+            { "nome": "Condemned - Trespasser", "base": 85, "dificuldade": "4" }
+        ],
+        "videoId": " ",
+        "rainbow": true
+    }
+]
