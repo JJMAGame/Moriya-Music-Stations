@@ -1,6 +1,6 @@
 [
     {
-        "nome": "Moriya Music Stations - Setlist",
+        "nome": "Moriya Music Stations - Parte 1",
         "dataInicio": "",
         "dataFim": "",
         "linkDownload": "https://github.com/JJMAGame/Moriya-Music-Stations/releases/tag/setlistpersonalizado",
@@ -142,7 +142,7 @@
             }
         ],
         "videoId": "",
-        "rainbow": false
+        "rainbow": true
     }
 ]
 

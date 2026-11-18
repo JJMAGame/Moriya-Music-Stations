@@ -6,24 +6,35 @@
     <title>Clone hero - Moriya Hero Setlist</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
+
+        :root {
+            --painel: rgba(22, 33, 62, 0.75);
+            --painel-escuro: rgba(15, 26, 46, 0.7);
+            --borda: rgba(42, 42, 74, 0.8);
+            --texto: #e0e0e0;
+            --texto-suave: #85c1e9;
+            --destaque: #e94560;
+        }
+
         body {
             padding: 20px;
             min-height: 100vh;
-            background: #1a1a2e; 
+            background: #1a1a2e;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        /* CONTAINER DO TÍTULO */
+        /* ============================================================
+           CONTAINER DO TÍTULO
+        ============================================================ */
         .header-container {
-            max-width: 900px;
-            margin: 0 auto 30px auto;
+            max-width: 1240px;
+            margin: 0 auto 24px auto;
             text-align: center;
             padding: 25px;
             background: rgba(22, 33, 62, 0.65);
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
-            border: 1px solid rgba(42, 42, 74, 0.8);
+            border: 1px solid var(--borda);
             border-radius: 16px;
             box-shadow: 0 8px 32px rgba(0,0,0,0.3);
         }
@@ -46,21 +57,110 @@
             100% { background-position: 300% 50%; }
         }
 
-        .header-container .subtitle { color: #85c1e9; font-size: 15px; margin-top: 10px; opacity: 0.9; }
+        .header-container .subtitle { color: var(--texto-suave); font-size: 15px; margin-top: 10px; opacity: 0.9; }
+
+        /* ============================================================
+           LAYOUT: SETLIST (ESQUERDA) + EM DESENVOLVIMENTO (DIREITA)
+        ============================================================ */
+        .layout {
+            max-width: 1240px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 340px;
+            gap: 24px;
+            align-items: start; /* os dois containers começam na mesma altura */
+        }
 
         /* CONTAINER DOS EVENTOS */
         .container-eventos {
-            max-width: 900px;
-            margin-left: 0;     
-            margin-right: auto; 
-            background: rgba(22, 33, 62, 0.75);
+            min-width: 0;
+            background: var(--painel);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             border-radius: 16px;
-            padding: 30px;
+            padding: 20px;
             box-shadow: 0 8px 32px rgba(0,0,0,0.4);
             border: 1px solid rgba(42, 42, 74, 0.9);
+            display: flex;
+            flex-direction: column;
+            max-height: calc(100vh - 240px);
+            min-height: 320px;
         }
+
+        /* Cabeçalho do painel esquerdo (não rola junto com a lista) */
+        .eventos-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 0 4px 14px 4px;
+            margin-bottom: 4px;
+            border-bottom: 1px solid var(--borda);
+            flex-shrink: 0;
+        }
+
+        .eventos-head h2 {
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            color: var(--texto-suave);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .eventos-head .contador {
+            font-size: 11px;
+            font-weight: 600;
+            color: #a8b6cc;
+            background: rgba(15, 26, 46, 0.9);
+            border: 1px solid var(--borda);
+            padding: 2px 10px;
+            border-radius: 20px;
+            text-transform: none;
+            letter-spacing: 0;
+        }
+
+        .btn-secundario {
+            appearance: none;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--texto-suave);
+            background: rgba(15, 26, 46, 0.9);
+            border: 1px solid var(--borda);
+            border-radius: 8px;
+            padding: 7px 12px;
+            transition: all 0.2s ease;
+        }
+
+        .btn-secundario:hover { border-color: var(--destaque); color: #fff; }
+
+        /* Área com scroll próprio */
+        .eventos-scroll {
+            overflow-y: auto;
+            overflow-x: hidden;
+            overscroll-behavior: contain;
+            padding: 16px 10px 4px 4px;
+            flex: 1 1 auto;
+            min-height: 0;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(233, 69, 96, 0.65) rgba(15, 26, 46, 0.6);
+        }
+
+        .eventos-scroll::-webkit-scrollbar { width: 10px; }
+        .eventos-scroll::-webkit-scrollbar-track { background: rgba(15, 26, 46, 0.6); border-radius: 10px; }
+        .eventos-scroll::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #e94560, #3a7bd5);
+            border-radius: 10px;
+            border: 2px solid rgba(15, 26, 46, 0.6);
+        }
+        .eventos-scroll::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, #ff5c77, #4a8bf5); }
 
         .rainbow-glow {
             animation: arco-iris-move 3s linear infinite !important;
@@ -93,51 +193,77 @@
             transition: transform 0.2s ease;
         }
 
-        /* LISTA DE EVENTOS */
+        /* ============================================================
+           CARD DO EVENTO (TÍTULO SEMPRE VISÍVEL / CORPO RECOLHÍVEL)
+        ============================================================ */
         .evento-card {
             background: rgba(26, 26, 46, 0.85);
             border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 25px;
+            margin-bottom: 16px;
             border: 1px solid rgba(42, 42, 74, 0.7);
-            transition: all 0.3s ease;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
             backdrop-filter: blur(5px);
         }
 
-        .evento-card:hover { border-color: #e94560; }
+        .evento-card:last-child { margin-bottom: 0; }
+        .evento-card:hover { border-color: var(--destaque); }
+        .evento-card.collapsed { box-shadow: inset 0 0 0 1px rgba(233, 69, 96, 0.15); }
 
+        /* Cabeçalho do card: sempre visível, inclusive quando recolhido */
         .evento-card .evento-titulo {
             display: flex;
-            justify-content: space-between; 
+            justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
             gap: 10px;
-            margin-bottom: 15px;
-            padding-bottom: 12px;
-            border-bottom: 1px solid rgba(42, 42, 74, 0.7);
+            padding: 16px 18px;
         }
 
         .evento-card .evento-titulo h2 {
-            color: #e0e0e0;
-            font-size: 18px;
+            color: var(--texto);
+            font-size: 17px;
             font-weight: 600;
             display: flex;
             align-items: center;
             gap: 8px;
+            flex: 1 1 220px;
+            min-width: 0;
+            line-height: 1.3;
+            overflow-wrap: anywhere;
         }
 
-        /* ============================================================
-           BOTÃO DE DOWNLOAD (AZUL/CIANO COM GLOW)
-        ============================================================ */
+        .evento-card .evento-titulo h2 .titulo-texto { min-width: 0; }
+
+        .evento-acoes {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .mapas-count {
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #a8b6cc;
+            background: rgba(15, 26, 46, 0.9);
+            border: 1px solid var(--borda);
+            padding: 4px 10px;
+            border-radius: 20px;
+            white-space: nowrap;
+        }
+
+        /* BOTÃO DE DOWNLOAD (AZUL/CIANO COM GLOW) */
         .btn-download {
             display: inline-flex;
             align-items: center;
             gap: 6px;
             background: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 100%);
             color: #ffffff;
-            padding: 8px 18px;
+            padding: 8px 16px;
             border-radius: 8px;
-            font-size: 13px;
+            font-size: 12px;
             font-weight: 700;
             text-decoration: none;
             text-transform: uppercase;
@@ -145,18 +271,79 @@
             transition: all 0.3s ease;
             box-shadow: 0 0 15px rgba(0, 210, 255, 0.4);
             border: 1px solid rgba(255, 255, 255, 0.2);
+            white-space: nowrap;
         }
 
         .btn-download:hover {
-            transform: translateY(-2px) scale(1.05);
+            transform: translateY(-2px) scale(1.03);
             box-shadow: 0 0 25px rgba(0, 210, 255, 0.8), 0 0 40px rgba(58, 123, 213, 0.4);
             background: linear-gradient(135deg, #00e5ff 0%, #4a8bf5 100%);
         }
 
-        /* Mantive a classe antiga só por segurança, mas ela não é mais usada no HTML */
+        /* Botão expandir / recolher */
+        .btn-toggle {
+            appearance: none;
+            cursor: pointer;
+            font-family: inherit;
+            width: 34px;
+            height: 34px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            border: 1px solid var(--borda);
+            background: rgba(15, 26, 46, 0.9);
+            color: var(--texto-suave);
+            transition: all 0.25s ease;
+            flex-shrink: 0;
+        }
+
+        .btn-toggle svg {
+            width: 16px;
+            height: 16px;
+            transition: transform 0.3s ease;
+        }
+
+        .btn-toggle:hover { border-color: var(--destaque); color: #fff; background: rgba(233, 69, 96, 0.15); }
+        .btn-toggle:focus-visible { outline: 2px solid var(--texto-suave); outline-offset: 2px; }
+        .evento-card.collapsed .btn-toggle svg { transform: rotate(-90deg); }
+
+        /* Corpo recolhível (animação com grid) */
+        .evento-corpo {
+            display: grid;
+            grid-template-rows: 1fr;
+            transition: grid-template-rows 0.32s ease, opacity 0.25s ease;
+            opacity: 1;
+            padding: 0 18px 18px 18px;
+        }
+
+        .evento-corpo-inner { overflow: hidden; min-height: 0; }
+
+        .evento-card.collapsed .evento-corpo { grid-template-rows: 0fr; opacity: 0; padding-bottom: 0; }
+
+        /* MAPAS */
+        .mapa-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            padding: 9px 14px;
+            margin: 4px 0;
+            background: var(--painel-escuro);
+            border-radius: 6px;
+            border-left: 3px solid var(--destaque);
+            transition: all 0.3s ease;
+        }
+
+        .mapa-item:hover { background: rgba(22, 33, 62, 0.9); transform: translateX(5px); }
+        .mapa-item .mapa-nome { color: var(--texto); font-size: 13.5px; flex: 1; min-width: 0; overflow-wrap: anywhere; }
+        .mapa-item .mapa-tags { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; justify-content: flex-end; }
+        .sem-mapas { color: #7f8c8d; text-align: center; padding: 15px; font-style: italic; }
+
+        /* ETIQUETA DE STATUS (aparece apenas se o JSON tiver datas válidas) */
         .evento-badge {
-            font-size: 12px;
-            padding: 4px 16px;
+            font-size: 11px;
+            padding: 4px 12px;
             border-radius: 20px;
             font-weight: 700;
             text-transform: uppercase;
@@ -164,6 +351,7 @@
             display: inline-flex;
             align-items: center;
             gap: 6px;
+            white-space: nowrap;
         }
 
         .badge-ao-vivo { background: #e74c3c; color: white; animation: glowVermelho 1.5s ease-in-out infinite; box-shadow: 0 0 20px rgba(231, 76, 60, 0.3); }
@@ -173,38 +361,130 @@
         .badge-em-breve { background: #f39c12; color: white; }
         .badge-encerrado { background: #7f8c8d; color: white; }
 
-        /* MAPAS */
-        .evento-card .mapa-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 14px;
-            margin: 4px 0;
-            background: rgba(15, 26, 46, 0.7);
-            border-radius: 6px;
-            border-left: 3px solid #e94560;
-            transition: all 0.3s ease;
-        }
-
-        .evento-card .mapa-item:hover { background: rgba(22, 33, 62, 0.9); transform: translateX(5px); }
-        .evento-card .mapa-item .mapa-nome { color: #e0e0e0; font-size: 14px; flex: 1; }
-        .evento-card .sem-mapas { color: #7f8c8d; text-align: center; padding: 15px; font-style: italic; }
-
         /* VÍDEO */
-        .video-section { margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(42, 42, 74, 0.7); }
+        .video-section { margin-top: 15px; padding-top: 15px; border-top: 1px solid var(--borda); }
         .video-section .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; border-radius: 8px; overflow: hidden; background: #0f3460; }
         .video-section .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
 
+        /* ============================================================
+           PAINEL DIREITO (EM DESENVOLVIMENTO)
+        ============================================================ */
+        .container-dev {
+            position: sticky;
+            top: 20px;
+            border-radius: 16px;
+            padding: 24px;
+            background: linear-gradient(160deg, rgba(40, 24, 66, 0.85) 0%, rgba(22, 33, 62, 0.85) 100%);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px dashed rgba(142, 68, 173, 0.8);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.4), inset 0 0 40px rgba(142, 68, 173, 0.08);
+            text-align: center;
+        }
+
+        .dev-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #f5d6ff;
+            background: rgba(142, 68, 173, 0.35);
+            border: 1px solid rgba(186, 104, 200, 0.6);
+            padding: 6px 14px;
+            border-radius: 20px;
+            animation: pulsarDev 2.2s ease-in-out infinite;
+        }
+
+        @keyframes pulsarDev {
+            0%, 100% { box-shadow: 0 0 0 rgba(186, 104, 200, 0); }
+            50% { box-shadow: 0 0 18px rgba(186, 104, 200, 0.55); }
+        }
+
+        .container-dev h2 {
+            margin: 18px 0 8px;
+            font-size: 22px;
+            color: #f0e6ff;
+            font-weight: 700;
+        }
+
+        .container-dev p {
+            font-size: 13px;
+            line-height: 1.6;
+            color: #b9c4da;
+        }
+
+        .dev-icone {
+            font-size: 44px;
+            line-height: 1;
+            margin: 18px 0 8px;
+            display: block;
+            animation: flutuar 3s ease-in-out infinite;
+        }
+
+        @keyframes flutuar {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-6px); }
+        }
+
+        .dev-lista {
+            list-style: none;
+            margin-top: 18px;
+            text-align: left;
+            display: grid;
+            gap: 8px;
+        }
+
+        .dev-lista li {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            color: #aebadb;
+            background: rgba(15, 26, 46, 0.55);
+            border: 1px solid rgba(42, 42, 74, 0.7);
+            border-radius: 8px;
+            padding: 8px 10px;
+        }
+
+        .dev-lista li::before { content: "○"; color: #ba68c8; font-size: 13px; }
+
+        .dev-rodape {
+            margin-top: 20px;
+            padding-top: 14px;
+            border-top: 1px dashed rgba(142, 68, 173, 0.45);
+            font-size: 11px;
+            color: #8f9bb3;
+            font-style: italic;
+        }
+
+        /* ============================================================
+           RESPONSIVO
+        ============================================================ */
+        @media (max-width: 1024px) {
+            .layout { grid-template-columns: minmax(0, 1fr); }
+            .container-eventos { max-height: 78vh; }
+            .container-dev { position: static; }
+        }
+
         @media (max-width: 600px) {
-            .header-container, .container-eventos { padding: 20px; }
+            body { padding: 14px; }
+            .header-container { padding: 20px; }
             .rainbow-title { font-size: 24px; }
-            .evento-card { padding: 15px; }
-            .evento-card .evento-titulo { flex-direction: column; align-items: flex-start; gap: 8px; }
+            .container-eventos { padding: 16px; max-height: 80vh; }
+            .evento-card .evento-titulo { padding: 14px; }
+            .evento-card .evento-titulo h2 { font-size: 15px; }
+            .evento-corpo { padding: 0 14px 14px 14px; }
+            .eventos-scroll { padding-top: 12px; }
         }
 
         @media (max-width: 480px) {
-            .evento-card .mapa-item { flex-direction: column; align-items: flex-start; gap: 8px; }
-            .evento-card .mapa-item .mapa-nome { font-size: 12px; }
+            .mapa-item { flex-direction: column; align-items: flex-start; gap: 8px; }
+            .mapa-item .mapa-tags { justify-content: flex-start; }
+            .mapa-item .mapa-nome { font-size: 12px; }
+            .evento-acoes { width: 100%; justify-content: space-between; }
         }
     </style>
 </head>
@@ -218,17 +498,64 @@
         <p class="subtitle">📜 Lista de todas as coletâneas de músicas</p>
     </div>
 
-    <!-- 2. CONTAINER DOS EVENTOS (Colado na Esquerda) -->
-    <div class="container-eventos">
-        <div id="eventosContainer">
-            <!-- Os eventos serão carregados do JSON aqui -->
-            <div style="color: #85c1e9; text-align: center; padding: 30px;">Carregando eventos...</div>
-        </div>
+    <!-- 2. LAYOUT: SETLIST À ESQUERDA / EM DESENVOLVIMENTO À DIREITA -->
+    <div class="layout">
+
+        <!-- 2.1 PAINEL DAS MÚSICAS (com scroll próprio) -->
+        <section class="container-eventos" aria-label="Setlists disponíveis">
+            <div class="eventos-head">
+                <h2>
+                    🎵 Setlists
+                    <span class="contador" id="contadorEventos">—</span>
+                </h2>
+                <button type="button" class="btn-secundario" id="btnToggleTodos">Recolher tudo</button>
+            </div>
+
+            <div class="eventos-scroll" id="eventosScroll">
+                <div id="eventosContainer">
+                    <!-- Os eventos serão carregados do JSON aqui -->
+                    <div style="color: #85c1e9; text-align: center; padding: 30px;">Carregando setlists...</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2.2 PAINEL DIREITO (EM DESENVOLVIMENTO) -->
+        <aside class="container-dev" aria-label="Seção em desenvolvimento">
+            <span class="dev-badge">🚧 Em desenvolvimento</span>
+
+            <span class="dev-icone" aria-hidden="true">🛠️</span>
+            <h2>Em construção</h2>
+            <p>
+                Esta área está sendo preparada e ficará disponível em breve.
+                Por enquanto, aproveite a setlist ao lado. 🎸
+            </p>
+
+            <ul class="dev-lista">
+                <li>Novidades da Moriya Music Stations</li>
+                <li>Filtros e busca de músicas</li>
+                <li>Estatísticas da setlist</li>
+            </ul>
+
+            <div class="dev-rodape">Mais informações em breve...</div>
+        </aside>
+
     </div>
 
     <script>
+        /* ============================================================
+           UTILITÁRIOS
+        ============================================================ */
+        function escapeHtml(valor) {
+            return String(valor ?? '')
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#39;');
+        }
+
         function obterCorBase(nivel) {
-            let n = Math.max(1, Math.min(99, parseInt(nivel)));
+            let n = Math.max(1, Math.min(99, parseInt(nivel, 10) || 1));
             let r, g, b;
 
             if (n <= 50) {
@@ -252,81 +579,84 @@
             const diffs = String(difficultyString).split(',').map(d => d.trim());
             let badgesHtml = '';
             diffs.forEach(diff => {
-                if (diff === "1") badgesHtml += `<span class="diff-facil">Fácil</span> `;
-                else if (diff === "2") badgesHtml += `<span class="diff-medio">Médio</span> `;
-                else if (diff === "3") badgesHtml += `<span class="diff-dificil">Difícil</span> `;
-                else if (diff === "4") badgesHtml += `<span class="diff-expert">Expert</span> `;
+                if (diff === "1") badgesHtml += `<span class="diff-facil">Fácil</span>`;
+                else if (diff === "2") badgesHtml += `<span class="diff-medio">Médio</span>`;
+                else if (diff === "3") badgesHtml += `<span class="diff-dificil">Difícil</span>`;
+                else if (diff === "4") badgesHtml += `<span class="diff-expert">Expert</span>`;
             });
             return badgesHtml;
         }
 
+        function converterData(valor) {
+            if (!valor || String(valor).trim() === '') return null;
+            const d = new Date(valor);
+            return isNaN(d.getTime()) ? null : d;
+        }
+
+        // Retorna null quando as datas não são válidas (ex.: campos vazios no JSON),
+        // evitando mostrar "ENCERRADO" indevidamente.
         function getStatusEvento(dataInicio, dataFim) {
+            const inicio = converterData(dataInicio);
+            const fim = converterData(dataFim);
+            if (!inicio && !fim) return null;
+
             const agora = new Date();
-            const inicio = new Date(dataInicio);
-            const fim = new Date(dataFim);
-            if (agora >= inicio && agora <= fim) return 'ao-vivo';
-            else if (agora < inicio) return 'em-breve';
-            else return 'encerrado';
-        }
+            const inicioEfetivo = inicio || fim;
+            const fimEfetivo = fim || inicio;
 
-        function formatarDataHora(data) {
-            const d = new Date(data);
-            return d.toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit', year: 'numeric' });
-        }
-
-        function formatarHora(data) {
-            const d = new Date(data);
-            return d.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
+            if (agora >= inicioEfetivo && agora <= fimEfetivo) return 'ao-vivo';
+            if (agora < inicioEfetivo) return 'em-breve';
+            return 'encerrado';
         }
 
         let eventos = [];
 
+        /* ============================================================
+           RENDERIZAÇÃO
+        ============================================================ */
         function renderizarEventos() {
             const container = document.getElementById('eventosContainer');
-            
+            const contadorEl = document.getElementById('contadorEventos');
+
             if (eventos.length === 0) {
-                container.innerHTML = `<div style="color: #7f8c8d; text-align: center; padding: 30px;">📭 Nenhum evento cadastrado.</div>`;
+                container.innerHTML = `<div style="color: #7f8c8d; text-align: center; padding: 30px;">📭 Nenhuma setlist cadastrada.</div>`;
+                contadorEl.textContent = '0 setlists';
                 return;
             }
-            
-            let html = '';
-            eventos.forEach((evento) => {
-                const status = getStatusEvento(evento.dataInicio, evento.dataFim);
-                
-                let badgeClass = '';
-                let badgeText = '';
-                let badgeIcon = '';
 
+            let html = '';
+            let totalMapas = 0;
+
+            eventos.forEach((evento) => {
+                const mapas = Array.isArray(evento.mapas) ? evento.mapas : [];
+                totalMapas += mapas.length;
+
+                const status = getStatusEvento(evento.dataInicio, evento.dataFim);
+                let badgeHtml = '';
                 if (status === 'ao-vivo') {
-                    badgeClass = 'badge-ao-vivo';
-                    badgeText = 'AO VIVO';
-                    badgeIcon = '<span class="pulse-dot"></span>';
+                    badgeHtml = `<span class="evento-badge badge-ao-vivo"><span class="pulse-dot"></span>AO VIVO</span>`;
                 } else if (status === 'em-breve') {
-                    badgeClass = 'badge-em-breve';
-                    badgeText = '📅 EM BREVE';
-                } else {
-                    badgeClass = 'badge-encerrado';
-                    badgeText = '✅ ENCERRADO';
+                    badgeHtml = `<span class="evento-badge badge-em-breve">📅 EM BREVE</span>`;
+                } else if (status === 'encerrado') {
+                    badgeHtml = `<span class="evento-badge badge-encerrado">✅ ENCERRADO</span>`;
                 }
 
                 const tituloClass = evento.rainbow === true ? 'rainbow-glow' : '';
-                const tituloIcon = '📌 ';
-                
+
                 let mapasHtml = '';
-                if (evento.mapas.length === 0) {
+                if (mapas.length === 0) {
                     mapasHtml = '<div class="sem-mapas">📭 Nenhum mapa registrado</div>';
                 } else {
-                    evento.mapas.forEach(mapa => {
+                    mapas.forEach(mapa => {
                         const valorBase = mapa.base ? mapa.base : 1;
                         const estiloBase = obterCorBase(valorBase);
-                        const baseHtml = `<span class="badge-base" style="${estiloBase}">Nível ${valorBase}</span>`;
-
+                        const baseHtml = `<span class="badge-base" style="${estiloBase}">Nível ${escapeHtml(valorBase)}</span>`;
                         const diffsHtml = renderDifficultyBadges(mapa.dificuldade);
-                        
+
                         mapasHtml += `
                             <div class="mapa-item">
-                                <span class="mapa-nome">${mapa.nome}</span>
-                                <div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap;">
+                                <span class="mapa-nome">${escapeHtml(mapa.nome)}</span>
+                                <div class="mapa-tags">
                                     ${baseHtml}
                                     ${diffsHtml}
                                 </div>
@@ -335,67 +665,117 @@
                     });
                 }
 
-                // Aqui mantive as variáveis de data caso você queira usar no futuro, 
-                // mas o botão de download substituiu a exibição delas.
-                const dataInicioFormatada = formatarDataHora(evento.dataInicio);
-                const dataFimFormatada = formatarDataHora(evento.dataFim);
-                const horaInicio = formatarHora(evento.dataInicio);
-                const horaFim = formatarHora(evento.dataFim);
-
                 let videoHtml = '';
-                if (evento.videoId && evento.videoId.trim() !== '') {
+                if (evento.videoId && String(evento.videoId).trim() !== '') {
                     videoHtml = `
                         <div class="video-section">
                             <div class="video-wrapper">
-                                <iframe src="https://www.youtube.com/embed/${evento.videoId}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <iframe src="https://www.youtube.com/embed/${encodeURIComponent(evento.videoId)}" title="Vídeo do evento" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
                         </div>
                     `;
                 }
 
-                // MUDANÇA AQUI: Onde ficava a data e o status, agora tem o botão de download.
-                // Substitua o '#' no href pelo link do arquivo .zip da sua setlist.
+                const link = typeof evento.linkDownload === 'string' ? evento.linkDownload.trim() : '';
+                const linkSeguro = /^https?:\/\//i.test(link) ? escapeHtml(link) : '';
+                const downloadHtml = linkSeguro
+                    ? `<a href="${linkSeguro}" class="btn-download" target="_blank" rel="noopener noreferrer" download>⬇️ Download</a>`
+                    : '';
+
                 html += `
-                    <div class="evento-card">
+                    <article class="evento-card">
                         <div class="evento-titulo">
                             <h2>
-                                <span class="icon">${tituloIcon}</span>
-                                <span class="${tituloClass}">${evento.nome}</span>
+                                <span class="icon" aria-hidden="true">📌</span>
+                                <span class="titulo-texto ${tituloClass}">${escapeHtml(evento.nome)}</span>
                             </h2>
-                            <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
-                                ${evento.linkDownload && evento.linkDownload.trim() !== ''
-                                    ? `<a href="${evento.linkDownload}" class="btn-download" target="_blank" rel="noopener noreferrer" download>
-                                           ⬇️ Download
-                                       </a>`
-                                    : ''}
+                            <div class="evento-acoes">
+                                ${badgeHtml}
+                                <span class="mapas-count">${mapas.length} ${mapas.length === 1 ? 'música' : 'músicas'}</span>
+                                ${downloadHtml}
+                                <button type="button" class="btn-toggle" aria-expanded="true" aria-label="Recolher setlist ${escapeHtml(evento.nome)}" title="Expandir / recolher">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>
+                                </button>
                             </div>
                         </div>
-                        ${mapasHtml}
-                        ${videoHtml}
-                    </div>
+                        <div class="evento-corpo">
+                            <div class="evento-corpo-inner">
+                                ${mapasHtml}
+                                ${videoHtml}
+                            </div>
+                        </div>
+                    </article>
                 `;
             });
-            
+
             container.innerHTML = html;
+            contadorEl.textContent = `${eventos.length} ${eventos.length === 1 ? 'setlist' : 'setlists'} · ${totalMapas} músicas`;
+            sincronizarBotaoTodos();
         }
 
+        /* ============================================================
+           EXPANDIR / RECOLHER (TÍTULO SEMPRE VISÍVEL)
+        ============================================================ */
+        function definirRecolhido(card, recolhido) {
+            card.classList.toggle('collapsed', recolhido);
+            const btn = card.querySelector('.btn-toggle');
+            if (btn) {
+                btn.setAttribute('aria-expanded', String(!recolhido));
+                const titulo = card.querySelector('.titulo-texto')?.textContent || 'setlist';
+                btn.setAttribute('aria-label', `${recolhido ? 'Expandir' : 'Recolher'} setlist ${titulo}`);
+            }
+        }
+
+        function sincronizarBotaoTodos() {
+            const btn = document.getElementById('btnToggleTodos');
+            if (!btn) return;
+            const cards = Array.from(document.querySelectorAll('.evento-card'));
+            const todosRecolhidos = cards.length > 0 && cards.every(c => c.classList.contains('collapsed'));
+            btn.textContent = todosRecolhidos ? 'Expandir tudo' : 'Recolher tudo';
+        }
+
+        document.getElementById('eventosContainer').addEventListener('click', (evento) => {
+            const btn = evento.target.closest('.btn-toggle');
+            if (!btn) return;
+            const card = btn.closest('.evento-card');
+            if (!card) return;
+            definirRecolhido(card, !card.classList.contains('collapsed'));
+            sincronizarBotaoTodos();
+        });
+
+        document.getElementById('btnToggleTodos').addEventListener('click', () => {
+            const cards = Array.from(document.querySelectorAll('.evento-card'));
+            if (cards.length === 0) return;
+            const recolher = cards.some(c => !c.classList.contains('collapsed'));
+            cards.forEach(card => definirRecolhido(card, recolher));
+            sincronizarBotaoTodos();
+        });
+
+        /* ============================================================
+           CARREGAMENTO DO JSON
+        ============================================================ */
         fetch('eventos.json')
             .then(response => {
                 if (!response.ok) throw new Error('Erro ao carregar o JSON');
                 return response.json();
             })
             .then(data => {
-                eventos = data;
+                eventos = Array.isArray(data) ? data : [];
                 renderizarEventos();
             })
             .catch(error => {
                 console.error('Erro:', error);
-                document.getElementById('eventosContainer').innerHTML = `
+                const container = document.getElementById('eventosContainer');
+                container.innerHTML = `
                     <div style="color: #e74c3c; text-align: center; padding: 30px;">
                         ⚠️ Erro ao carregar a lista de eventos.<br>
                         Verifique se o arquivo <strong>eventos.json</strong> está na mesma pasta.
                     </div>
                 `;
+                const contadorEl = document.getElementById('contadorEventos');
+                if (contadorEl) contadorEl.textContent = 'erro';
             });
     </script>
 </body>
