@@ -1,0 +1,60 @@
+[
+    {
+        "nome": "GTA VI",
+        "dataInicio": "",
+        "dataFim": "",
+        "linkDownload": "https://github.com/JJMAGame/Moriya-Music-Stations/releases/tag/setlistpersonalizado",
+        "mapas": [
+            {
+                "nome": "Iron Maiden - The Trooper",
+                "base": 6,
+                "dificuldade": "1,2,3,4"
+            },
+            {
+                "nome": "Pantera - I'm Broken",
+                "base": 4,
+                "dificuldade": "1,2,3,4"
+            },
+            {
+                "nome": "Slayer - Raining Blood",
+                "base": 6,
+                "dificuldade": "1,2,3,4"
+            },
+            {
+                "nome": "April Wine - Roller",
+                "base": 4,
+                "dificuldade": "2,4"
+            },
+            {
+                "nome": "Bad Company - Rock 'n' Roll Fantasy",
+                "base": 3,
+                "dificuldade": "1,2,3,4"
+            },
+            {
+                "nome": "Bad Company - Rock 'n' Roll Fantasy",
+                "base": 3,
+                "dificuldade": "1,2,3,4"
+            },
+            {
+                "nome": "Jay Ferguson - Thunder Island",
+                "base": 1,
+                "dificuldade": "1,2,3,4"
+            },
+            {
+                "nome": "Jay Ferguson - Thunder Island",
+                "base": 1,
+                "dificuldade": "1,2,3,4"
+            },
+            {
+                "nome": "Joan Jett & The Blackhearts - I Love Rock N' Roll",
+                "base": 1,
+                "dificuldade": "1,2,3,4"
+            },
+                        {
+                "nome": "Tom Petty - Love Is A Long Road",
+                "base": 2,
+                "dificuldade": "4"
+            }
+        ]
+    }
+]
