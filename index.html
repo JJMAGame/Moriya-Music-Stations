@@ -460,6 +460,20 @@
             font-style: italic;
         }
 
+        /* AVISO DE SETLIST QUE NÃO PÔDE SER CARREGADA */
+        .setlist-erro {
+            background: rgba(231, 76, 60, 0.12);
+            border: 1px solid rgba(231, 76, 60, 0.5);
+            color: #ff9a8a;
+            border-radius: 12px;
+            padding: 14px 16px;
+            margin-bottom: 12px;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        .setlist-erro:last-child { margin-bottom: 0; }
+
         /* ============================================================
            RESPONSIVO
         ============================================================ */
@@ -513,7 +527,7 @@
 
             <div class="eventos-scroll" id="eventosScroll">
                 <div id="eventosContainer">
-                    <!-- Os eventos serão carregados do JSON aqui -->
+                    <!-- As setlists serão carregadas a partir do índice eventos.json -->
                     <div style="color: #85c1e9; text-align: center; padding: 30px;">Carregando setlists...</div>
                 </div>
             </div>
@@ -609,16 +623,17 @@
             return 'encerrado';
         }
 
-        let eventos = [];
+        let setlists = [];
+        let falhas = [];
 
         /* ============================================================
            RENDERIZAÇÃO
         ============================================================ */
-        function renderizarEventos() {
+        function renderizarSetlists() {
             const container = document.getElementById('eventosContainer');
             const contadorEl = document.getElementById('contadorEventos');
 
-            if (eventos.length === 0) {
+            if (setlists.length === 0 && falhas.length === 0) {
                 container.innerHTML = `<div style="color: #7f8c8d; text-align: center; padding: 30px;">📭 Nenhuma setlist cadastrada.</div>`;
                 contadorEl.textContent = '0 setlists';
                 return;
@@ -627,7 +642,7 @@
             let html = '';
             let totalMapas = 0;
 
-            eventos.forEach((evento) => {
+            setlists.forEach((evento) => {
                 const mapas = Array.isArray(evento.mapas) ? evento.mapas : [];
                 totalMapas += mapas.length;
 
@@ -710,8 +725,12 @@
                 `;
             });
 
+            falhas.forEach(mensagem => {
+                html += `<div class="setlist-erro">⚠️ ${escapeHtml(mensagem)}</div>`;
+            });
+
             container.innerHTML = html;
-            contadorEl.textContent = `${eventos.length} ${eventos.length === 1 ? 'setlist' : 'setlists'} · ${totalMapas} músicas`;
+            contadorEl.textContent = `${setlists.length} ${setlists.length === 1 ? 'setlist' : 'setlists'} · ${totalMapas} músicas`;
             sincronizarBotaoTodos();
         }
 
@@ -754,26 +773,64 @@
         });
 
         /* ============================================================
-           CARREGAMENTO DO JSON
+           CARREGAMENTO: ÍNDICE (eventos.json) + ARQUIVOS DE SETLIST
+           ------------------------------------------------------------
+           eventos.json é apenas a lista dos arquivos, por exemplo:
+               ["setlist/Setlist-parte-1.json", "setlist/Setlist-parte-2.json"]
+
+           Cada arquivo de setlist contém UM objeto (ou uma lista de
+           objetos) no mesmo formato de antes. Para publicar uma nova
+           setlist, basta criar o arquivo e adicioná-lo ao índice.
         ============================================================ */
-        // O GitHub Pages/CDN costuma guardar o JSON em cache por vários minutos.
-        // O parâmetro de versão + no-store garante que os níveis atualizados apareçam.
-        fetch(`eventos.json?v=${Date.now()}`, { cache: 'no-store' })
-            .then(response => {
-                if (!response.ok) throw new Error('Erro ao carregar o JSON');
-                return response.json();
-            })
-            .then(data => {
-                eventos = Array.isArray(data) ? data : [];
-                renderizarEventos();
-            })
+        const INDICE_SETLISTS = 'eventos.json';
+
+        async function carregarSetlists() {
+            // O GitHub Pages/CDN guarda os JSON em cache por vários minutos.
+            // O parâmetro de versão + no-store garante que as atualizações apareçam.
+            const versao = Date.now();
+
+            const respostaIndice = await fetch(`${INDICE_SETLISTS}?v=${versao}`, { cache: 'no-store' });
+            if (!respostaIndice.ok) throw new Error('Erro ao carregar o índice de setlists');
+
+            const indice = await respostaIndice.json();
+            const entradas = Array.isArray(indice) ? indice : [indice];
+
+            const resultados = await Promise.all(entradas.map(async (entrada) => {
+                // Compatibilidade: aceita um objeto de setlist direto no índice.
+                if (entrada && typeof entrada === 'object') {
+                    return { setlists: Array.isArray(entrada) ? entrada : [entrada] };
+                }
+
+                if (typeof entrada !== 'string' || entrada.trim() === '') {
+                    return { erro: 'Entrada inválida no índice de setlists.' };
+                }
+
+                const arquivo = entrada.trim();
+                try {
+                    const resposta = await fetch(`${encodeURI(arquivo)}?v=${versao}`, { cache: 'no-store' });
+                    if (!resposta.ok) throw new Error(`HTTP ${resposta.status}`);
+                    const dados = await resposta.json();
+                    return { setlists: Array.isArray(dados) ? dados : [dados] };
+                } catch (erro) {
+                    console.error(`Erro ao carregar ${arquivo}:`, erro);
+                    return { erro: `Não foi possível carregar a setlist "${arquivo}".` };
+                }
+            }));
+
+            setlists = resultados.flatMap(resultado => resultado.setlists || []);
+            falhas = resultados.map(resultado => resultado.erro).filter(Boolean);
+        }
+
+        carregarSetlists()
+            .then(renderizarSetlists)
             .catch(error => {
                 console.error('Erro:', error);
                 const container = document.getElementById('eventosContainer');
                 container.innerHTML = `
                     <div style="color: #e74c3c; text-align: center; padding: 30px;">
-                        ⚠️ Erro ao carregar a lista de eventos.<br>
-                        Verifique se o arquivo <strong>eventos.json</strong> está na mesma pasta.
+                        ⚠️ Erro ao carregar a lista de setlists.<br>
+                        Verifique se o arquivo <strong>eventos.json</strong> está na mesma pasta e se os
+                        arquivos de setlist listados nele existem.
                     </div>
                 `;
                 const contadorEl = document.getElementById('contadorEventos');
