@@ -60,7 +60,7 @@
         .header-container .subtitle { color: var(--texto-suave); font-size: 15px; margin-top: 10px; opacity: 0.9; }
 
         /* ============================================================
-           LAYOUT: SETLIST (ESQUERDA) + EM DESENVOLVIMENTO (DIREITA)
+           LAYOUT: SETLIST (ESQUERDA) + CRÉDITOS (DIREITA)
         ============================================================ */
         .layout {
             max-width: 1240px;
@@ -367,98 +367,212 @@
         .video-section .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
 
         /* ============================================================
-           PAINEL DIREITO (EM DESENVOLVIMENTO)
+           PAINEL DIREITO: CRÉDITOS (scroll próprio)
         ============================================================ */
-        .container-dev {
+        .container-creditos {
             position: sticky;
             top: 20px;
-            border-radius: 16px;
-            padding: 24px;
-            background: linear-gradient(160deg, rgba(40, 24, 66, 0.85) 0%, rgba(22, 33, 62, 0.85) 100%);
+            background: var(--painel);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
-            border: 1px dashed rgba(142, 68, 173, 0.8);
-            box-shadow: 0 8px 32px rgba(0,0,0,0.4), inset 0 0 40px rgba(142, 68, 173, 0.08);
-            text-align: center;
+            border-radius: 16px;
+            border: 1px solid rgba(42, 42, 74, 0.9);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+            display: flex;
+            flex-direction: column;
+            max-height: calc(100vh - 240px);
+            min-height: 320px;
+            overflow: hidden;
         }
 
-        .dev-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 11px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #f5d6ff;
-            background: rgba(142, 68, 173, 0.35);
-            border: 1px solid rgba(186, 104, 200, 0.6);
-            padding: 6px 14px;
-            border-radius: 20px;
-            animation: pulsarDev 2.2s ease-in-out infinite;
-        }
-
-        @keyframes pulsarDev {
-            0%, 100% { box-shadow: 0 0 0 rgba(186, 104, 200, 0); }
-            50% { box-shadow: 0 0 18px rgba(186, 104, 200, 0.55); }
-        }
-
-        .container-dev h2 {
-            margin: 18px 0 8px;
-            font-size: 22px;
-            color: #f0e6ff;
-            font-weight: 700;
-        }
-
-        .container-dev p {
-            font-size: 13px;
-            line-height: 1.6;
-            color: #b9c4da;
-        }
-
-        .dev-icone {
-            font-size: 44px;
-            line-height: 1;
-            margin: 18px 0 8px;
-            display: block;
-            animation: flutuar 3s ease-in-out infinite;
-        }
-
-        @keyframes flutuar {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-6px); }
-        }
-
-        .dev-lista {
-            list-style: none;
-            margin-top: 18px;
-            text-align: left;
-            display: grid;
-            gap: 8px;
-        }
-
-        .dev-lista li {
+        .creditos-head {
             display: flex;
             align-items: center;
             gap: 8px;
-            font-size: 12px;
-            color: #aebadb;
-            background: rgba(15, 26, 46, 0.55);
-            border: 1px solid rgba(42, 42, 74, 0.7);
-            border-radius: 8px;
-            padding: 8px 10px;
+            padding: 16px 18px 14px 18px;
+            border-bottom: 1px solid var(--borda);
+            flex-shrink: 0;
         }
 
-        .dev-lista li::before { content: "○"; color: #ba68c8; font-size: 13px; }
+        .creditos-head h2 {
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            color: var(--texto-suave);
+        }
 
-        .dev-rodape {
-            margin-top: 20px;
-            padding-top: 14px;
-            border-top: 1px dashed rgba(142, 68, 173, 0.45);
+        .creditos-scroll {
+            overflow-y: auto;
+            overflow-x: hidden;
+            overscroll-behavior: contain;
+            padding: 14px 14px 18px 14px;
+            flex: 1 1 auto;
+            min-height: 0;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(186, 104, 200, 0.6) rgba(15, 26, 46, 0.6);
+        }
+
+        .creditos-scroll::-webkit-scrollbar { width: 10px; }
+        .creditos-scroll::-webkit-scrollbar-track { background: rgba(15, 26, 46, 0.6); border-radius: 10px; }
+        .creditos-scroll::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #ba68c8, #3a7bd5);
+            border-radius: 10px;
+            border: 2px solid rgba(15, 26, 46, 0.6);
+        }
+
+        /* Rótulo de categoria (Criadores / Participantes / Setlist / ...) */
+        .credito-grupo { margin-bottom: 20px; }
+        .credito-grupo:last-child { margin-bottom: 0; }
+
+        .credito-label {
+            display: inline-block;
             font-size: 11px;
-            color: #8f9bb3;
-            font-style: italic;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #f0e6ff;
+            background: rgba(142, 68, 173, 0.28);
+            border: 1px solid rgba(186, 104, 200, 0.55);
+            border-radius: 20px;
+            padding: 5px 12px;
+            margin-bottom: 10px;
         }
+
+        /* Pessoa */
+        .credito-pessoa {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 12px;
+            margin-bottom: 8px;
+            background: rgba(15, 26, 46, 0.6);
+            border: 1px solid rgba(42, 42, 74, 0.7);
+            border-radius: 10px;
+            transition: all 0.2s ease;
+        }
+
+        .credito-pessoa:last-child { margin-bottom: 0; }
+        .credito-pessoa:hover { border-color: #ba68c8; transform: translateX(3px); }
+
+        .credito-foto {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+            background: linear-gradient(135deg, #ba68c8, #3a7bd5);
+            border: 2px solid rgba(186, 104, 200, 0.6);
+        }
+
+        .credito-inicial {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 20px;
+            color: #ffffff;
+            text-transform: uppercase;
+            background: linear-gradient(135deg, #ba68c8, #3a7bd5);
+            border: 2px solid rgba(186, 104, 200, 0.6);
+        }
+
+        .credito-info {
+            flex: 1;
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+
+        .credito-nome {
+            color: #f0e6ff;
+            font-size: 14px;
+            font-weight: 700;
+            overflow-wrap: anywhere;
+        }
+
+        .credito-desc {
+            color: #aebadb;
+            font-size: 12px;
+            line-height: 1.45;
+            overflow-wrap: anywhere;
+        }
+
+        .credito-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 11px;
+            font-weight: 700;
+            color: #7fd4ff;
+            text-decoration: none;
+            margin-top: 2px;
+            max-width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .credito-link:hover { text-decoration: underline; }
+
+        .sem-creditos { color: #7f8c8d; font-size: 13px; font-style: italic; padding: 6px 2px; }
+
+        /* ============================================================
+           BOTÃO FLUTUANTE "EM DESENVOLVIMENTO" (canto inferior direito)
+        ============================================================ */
+        .btn-dev {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            z-index: 1000;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: inherit;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            color: #f5d6ff;
+            background: linear-gradient(135deg, rgba(142, 68, 173, 0.9), rgba(40, 24, 66, 0.95));
+            border: 1px solid rgba(186, 104, 200, 0.7);
+            border-radius: 999px;
+            padding: 10px 16px;
+            cursor: pointer;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45), 0 0 18px rgba(186, 104, 200, 0.35);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .btn-dev:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 26px rgba(0, 0, 0, 0.5), 0 0 26px rgba(186, 104, 200, 0.55);
+        }
+
+        .dev-popover {
+            position: fixed;
+            right: 20px;
+            bottom: 76px;
+            z-index: 1000;
+            width: 260px;
+            border-radius: 12px;
+            padding: 16px;
+            background: rgba(30, 22, 48, 0.97);
+            border: 1px solid rgba(186, 104, 200, 0.55);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+            font-size: 12px;
+            line-height: 1.55;
+            color: #cbbfe0;
+        }
+
+        .dev-popover[hidden] { display: none; }
+        .dev-popover strong { color: #f0e6ff; }
+        .dev-popover ul { margin: 10px 0 0 18px; }
+        .dev-popover li { margin-bottom: 4px; }
 
         /* AVISO DE SETLIST QUE NÃO PÔDE SER CARREGADA */
         .setlist-erro {
@@ -480,7 +594,7 @@
         @media (max-width: 1024px) {
             .layout { grid-template-columns: minmax(0, 1fr); }
             .container-eventos { max-height: 78vh; }
-            .container-dev { position: static; }
+            .container-creditos { position: static; max-height: 60vh; }
         }
 
         @media (max-width: 600px) {
@@ -488,10 +602,13 @@
             .header-container { padding: 20px; }
             .rainbow-title { font-size: 24px; }
             .container-eventos { padding: 16px; max-height: 80vh; }
+            .container-creditos { max-height: 70vh; }
             .evento-card .evento-titulo { padding: 14px; }
             .evento-card .evento-titulo h2 { font-size: 15px; }
             .evento-corpo { padding: 0 14px 14px 14px; }
             .eventos-scroll { padding-top: 12px; }
+            .btn-dev { right: 14px; bottom: 14px; }
+            .dev-popover { right: 14px; bottom: 66px; width: 240px; }
         }
 
         @media (max-width: 480px) {
@@ -512,7 +629,7 @@
         <p class="subtitle">📜 Lista de todas as coletâneas de músicas</p>
     </div>
 
-    <!-- 2. LAYOUT: SETLIST À ESQUERDA / EM DESENVOLVIMENTO À DIREITA -->
+    <!-- 2. LAYOUT: SETLIST À ESQUERDA / CRÉDITOS À DIREITA -->
     <div class="layout">
 
         <!-- 2.1 PAINEL DAS MÚSICAS (com scroll próprio) -->
@@ -533,26 +650,31 @@
             </div>
         </section>
 
-        <!-- 2.2 PAINEL DIREITO (EM DESENVOLVIMENTO) -->
-        <aside class="container-dev" aria-label="Seção em desenvolvimento">
-            <span class="dev-badge">🚧 Em desenvolvimento</span>
-
-            <span class="dev-icone" aria-hidden="true">🛠️</span>
-            <h2>Em construção</h2>
-            <p>
-                Esta área está sendo preparada e ficará disponível em breve.
-                Por enquanto, aproveite a setlist ao lado. 🎸
-            </p>
-
-            <ul class="dev-lista">
-                <li>Novidades da Moriya Music Stations</li>
-                <li>Container de créditos</li>
-                <li>Correções</li>
-            </ul>
-
-            <div class="dev-rodape">Mais informações em breve...</div>
+        <!-- 2.2 PAINEL DIREITO: CRÉDITOS (scroll próprio) -->
+        <aside class="container-creditos" aria-label="Créditos">
+            <div class="creditos-head">
+                <h2>👥 Créditos</h2>
+            </div>
+            <div class="creditos-scroll" id="creditosScroll">
+                <div id="creditosContainer">
+                    <div style="color: #85c1e9; text-align: center; padding: 20px;">Carregando créditos...</div>
+                </div>
+            </div>
         </aside>
 
+    </div>
+
+    <!-- 3. BOTÃO FLUTUANTE "EM DESENVOLVIMENTO" (canto inferior direito) -->
+    <button type="button" class="btn-dev" id="btnDev" aria-expanded="false" aria-controls="devPopover">🚧 Em desenvolvimento</button>
+
+    <div class="dev-popover" id="devPopover" hidden>
+        <strong>🛠️ Em construção</strong>
+        <p style="margin-top: 6px;">Esta área está sendo preparada e ficará disponível em breve.</p>
+        <ul>
+            <li>Novidades da Moriya Music Stations</li>
+            <li>Filtros e busca de músicas</li>
+            <li>Estatísticas da setlist</li>
+        </ul>
     </div>
 
     <script>
@@ -836,6 +958,157 @@
                 const contadorEl = document.getElementById('contadorEventos');
                 if (contadorEl) contadorEl.textContent = 'erro';
             });
+
+        /* ============================================================
+           CRÉDITOS — divididos em 3 arquivos:
+             criadores.json      -> label "Criadores"
+             participantes.json  -> label "Participantes"
+             setlist.json        -> label "Setlist"
+           ------------------------------------------------------------
+           Cada arquivo é uma LISTA de pessoas:
+           [
+               { "foto": "images/nome.png", "nome": "Fulano",
+                 "descricao": "O que fez", "link": "https://..." }
+           ]
+           Também aceita as chaves "Foto", "Nome", "Descrição",
+           "Link"/"href" e "imagem".
+        ============================================================ */
+        function campo(obj, ...chaves) {
+            for (const chave of chaves) {
+                if (obj && obj[chave] !== undefined && obj[chave] !== null) return obj[chave];
+            }
+            return '';
+        }
+
+        function inicialDoNome(nome) {
+            const limpo = String(nome || '').trim();
+            return limpo ? limpo.charAt(0) : '?';
+        }
+
+        function sanitizarCaminhoImagem(foto) {
+            const valor = String(foto || '').trim();
+            if (!valor) return '';
+            if (/^https?:\/\//i.test(valor)) return escapeHtml(valor);
+            if (/^[a-zA-Z][a-zA-Z0-9+.-]*:/.test(valor)) return ''; // bloqueia javascript:, data:, etc.
+            return escapeHtml(valor);
+        }
+
+        function renderizarPessoa(pessoa) {
+            const nome = String(campo(pessoa, 'nome', 'Nome') || '').trim();
+            const descricao = String(campo(pessoa, 'descricao', 'descrição', 'Descrição') || '').trim();
+            const link = String(campo(pessoa, 'link', 'Link', 'href') || '').trim();
+            const foto = sanitizarCaminhoImagem(campo(pessoa, 'foto', 'Foto', 'imagem'));
+
+            const avatarHtml = foto
+                ? `<img class="credito-foto" src="${foto}" alt="Foto de ${escapeHtml(nome)}" loading="lazy" data-inicial="${escapeHtml(inicialDoNome(nome))}">`
+                : `<div class="credito-inicial" aria-hidden="true">${escapeHtml(inicialDoNome(nome))}</div>`;
+
+            const linkSeguro = /^https?:\/\//i.test(link) ? escapeHtml(link) : '';
+            const linkHtml = linkSeguro
+                ? `<a class="credito-link" href="${linkSeguro}" target="_blank" rel="noopener noreferrer" title="${linkSeguro}">🔗 ${linkSeguro}</a>`
+                : '';
+
+            return `
+                <div class="credito-pessoa">
+                    ${avatarHtml}
+                    <div class="credito-info">
+                        <span class="credito-nome">${escapeHtml(nome)}</span>
+                        ${descricao ? `<span class="credito-desc">${escapeHtml(descricao)}</span>` : ''}
+                        ${linkHtml}
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderizarCreditos(categorias) {
+            const container = document.getElementById('creditosContainer');
+
+            if (!categorias || categorias.length === 0) {
+                container.innerHTML = `<div class="sem-creditos">📭 Nenhum crédito cadastrado.</div>`;
+                return;
+            }
+
+            let html = '';
+
+            categorias.forEach(({ rotulo, pessoas, erro }) => {
+                html += `<section class="credito-grupo" aria-label="${escapeHtml(rotulo)}">
+                    <span class="credito-label">${escapeHtml(rotulo)}</span>`;
+
+                if (erro) {
+                    html += `<div class="sem-creditos" style="color:#ff9a8a;">⚠️ ${escapeHtml(erro)}</div>`;
+                } else if (pessoas.length === 0) {
+                    html += `<div class="sem-creditos">Sem membros ainda.</div>`;
+                } else {
+                    pessoas.forEach(pessoa => {
+                        html += renderizarPessoa(pessoa);
+                    });
+                }
+
+                html += `</section>`;
+            });
+
+            container.innerHTML = html;
+
+            // Se a imagem não existir, troca pela inicial do nome.
+            container.querySelectorAll('.credito-foto').forEach(img => {
+                img.addEventListener('error', () => {
+                    const div = document.createElement('div');
+                    div.className = 'credito-inicial';
+                    div.textContent = img.dataset.inicial || '?';
+                    div.setAttribute('aria-hidden', 'true');
+                    img.replaceWith(div);
+                });
+            });
+        }
+
+        // Cada arquivo vira uma "label" no painel de créditos.
+        const FONTES_CREDITOS = [
+            { arquivo: 'creditos/criadores.json', rotulo: 'Criadores' },
+            { arquivo: 'creditos/participantes.json', rotulo: 'Participantes' },
+            { arquivo: 'creditos/setlist.json', rotulo: 'Criadores e Origem de Setlist' }
+        ];
+
+        async function carregarCreditos() {
+            const versao = Date.now();
+            const resultados = await Promise.all(FONTES_CREDITOS.map(async ({ arquivo, rotulo }) => {
+                try {
+                    const resposta = await fetch(`${encodeURI(arquivo)}?v=${versao}`, { cache: 'no-store' });
+                    if (!resposta.ok) throw new Error(`HTTP ${resposta.status}`);
+                    const dados = await resposta.json();
+                    return { rotulo, pessoas: Array.isArray(dados) ? dados : [], erro: null };
+                } catch (erro) {
+                    console.error(`Erro ao carregar ${arquivo}:`, erro);
+                    return { rotulo, pessoas: [], erro: `Não foi possível carregar "${arquivo}".` };
+                }
+            }));
+
+            renderizarCreditos(resultados);
+        }
+
+        carregarCreditos().catch(error => {
+            console.error('Erro ao carregar créditos:', error);
+            const container = document.getElementById('creditosContainer');
+            container.innerHTML = `<div class="sem-creditos" style="color: #ff9a8a;">⚠️ Erro ao carregar os créditos.</div>`;
+        });
+
+        /* ============================================================
+           BOTÃO "EM DESENVOLVIMENTO"
+        ============================================================ */
+        const btnDev = document.getElementById('btnDev');
+        const popoverDev = document.getElementById('devPopover');
+
+        btnDev.addEventListener('click', () => {
+            const abrir = popoverDev.hidden;
+            popoverDev.hidden = !abrir;
+            btnDev.setAttribute('aria-expanded', String(abrir));
+        });
+
+        document.addEventListener('click', (evento) => {
+            if (!btnDev.contains(evento.target) && !popoverDev.contains(evento.target)) {
+                popoverDev.hidden = true;
+                btnDev.setAttribute('aria-expanded', 'false');
+            }
+        });
     </script>
 </body>
 </html>

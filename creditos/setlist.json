@@ -1,0 +1,71 @@
+[
+    {
+        "foto": "images/fuse.png",
+        "nome": "Fuse Box",
+        "descricao": "Bem-vindo ao Fuse Box! Esta coletânea é a tão aguardada sequência do bem-sucedido setlist eletrônico de 2019, Circuit Breaker.",
+        "link": "https://customsongscentral.com/fuse-box/"
+    },
+    {
+        "foto": "images/ragequit.png",
+        "nome": "Rage Quit",
+        "descricao": "Bem-vindo ao Rage Quit, uma coletânea de músicas personalizadas para Clone Hero e YARG, composta por charts (partituras) de temas de videogames! A equipe do Rage Quit desenvolveu esta coletânea para proporcionar uma experiência semelhante à de um jogo da franquia Guitar Hero, aliada ao polimento e aos recursos típicos de uma coletânea personalizada moderna criada pela comunidade.",
+        "link": "https://customsongscentral.com/rage-quit/"
+    },
+    {
+        "foto": "images/cth1r.png",
+        "nome": "Carpal Tunnel Hero: Remastered",
+        "descricao": "Anos após o Carpal Tunnel Hero ter revolucionado a comunidade de criação de charts e estabelecido as bases iniciais para a criação do CSC, temos o orgulho de apresentá-lo remasterizado e atualizado para os padrões modernos.",
+        "link": "https://customsongscentral.com/cth1r/"
+    },
+    {
+        "foto": "images/attentionspan.png",
+        "nome": "Attention Span",
+        "descricao": "Não queremos desperdiçar seu precioso tempo, então vamos direto ao assunto: mais de 330 partituras curtas, todas organizadas para o seu deleite enquanto você rola a tela sem parar! (E se você quiser ouvi-las, em vez de ficar olhando para o menu de músicas por uma hora, você também pode!)",
+        "link": "https://customsongscentral.com/attention-span/"
+    },
+    {
+        "foto": "images/lisarb2.png",
+        "nome": "LISARB2",
+        "descricao": "Sequencia brasileira do LISARB, com a participação de edinaldo pereira",
+        "link": "#"
+    },
+    {
+        "foto": "images/marathon.png",
+        "nome": "Marathon Hero",
+        "descricao": "Temos o orgulho de apresentar Marathon Hero, com mais de 17 horas de música. Cada música desta seleção tem 10 minutos ou mais, sendo a mais longa com mais de 100 minutos. Esperamos que vocês gostem de ouvi-la tanto quanto nós gostamos de criá-la.",
+        "link": "https://customsongscentral.com/marathon-hero/"
+    },
+
+    {
+        "foto": "images/csc.png",
+        "nome": "Custom Songs Central",
+        "descricao": "...é o principal portal e coletivo da comunidade dedicado à criação e distribuição gratuita de pacotes de músicas (song packs) e setlists personalizados para o jogo de ritmo Clone Hero (também compatíveis com o YARG).",
+        "link": "https://customsongscentral.com"
+    },
+    {
+        "foto": "images/goulart.png",
+        "nome": "GoulartGH",
+        "descricao": "Criador da musica: kfaraday - Solar Bowler",
+        "link": "https://www.youtube.com/@GoulartGH"
+    },
+    {
+        "foto": "images/angevil.png",
+        "nome": "Angevil",
+        "descricao": "Criador da chard conhecido: Born of Osiris - Follow the Signs",
+        "link": "https://www.youtube.com/@AngevilHero"
+    },
+    {
+        "foto": "images/ghvh.png",
+        "nome": "Guitar Hero: Van Halen",
+        "descricao": "...é um jogo eletrônico de ritmo lançado em dezembro de 2009 pela Activision, sendo o terceiro título da franquia focado exclusivamente em uma única banda (após Aerosmith e Metallica)",
+        "link": "#"
+    },
+    {
+        "foto": "images/gh3.png",
+        "nome": "Guitar Hero III: Legends of Rock",
+        "descricao": "...é um jogo eletrônico de ritmo lançado em 2007 pela Activision, sendo o terceiro título da franquia Guitar Hero.",
+        "link": "#"
+    }
+
+
+]
