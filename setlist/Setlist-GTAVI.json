@@ -40,8 +40,13 @@
                 "base": 1,
                 "dificuldade": "1,2,3,4"
             },
-                        {
+            {
                 "nome": "Tom Petty - Love Is A Long Road",
+                "base": 2,
+                "dificuldade": "4"
+            },
+            {
+                "nome": "MGMT - Electric Feel (Justice Remix)",
                 "base": 2,
                 "dificuldade": "4"
             }
