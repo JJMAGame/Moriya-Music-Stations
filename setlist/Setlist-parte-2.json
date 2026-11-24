@@ -1,0 +1,142 @@
+[
+    {
+        "nome": "Moriya Music Stations - Parte 2 (System of a Down jogando emulador de Snes com uns palhaços)",
+        "dataInicio": "",
+        "dataFim": "",
+        "linkDownload": "https://github.com/JJMAGame/Moriya-Music-Stations/releases/tag/setlistpersonalzado2",
+        "mapas": [
+            {
+                "nome": "Disturbed - Inside the Fire",
+                "base": 0,
+                "dificuldade": "1,2,3,4"
+            },
+            {
+                "nome": "Disturbed - Prayer",
+                "base": 0,
+                "dificuldade": "1,2,3,4"
+            },
+            {
+                "nome": "Imperial Circus Dead Decadence - Yomi yori Kikoyu, Kokoku No Hi To Honoo No Shoujo",
+                "base": 0,
+                "dificuldade": "1,2,3,4"
+            },
+            {
+                "nome": "Jukio Kallio & Daniel Hagström - Bean Thieves",
+                "base": 4,
+                "dificuldade": "1,2,3,4"
+            },
+            {
+                "nome": "Jun Ishikawa - Candy Constellation",
+                "base": 0,
+                "dificuldade": "1,2,3,4"
+            },
+            {
+                "nome": "Koji Kondo - Bowser",
+                "base": 6,
+                "dificuldade": "1,2,3,4"
+            },
+            {
+                "nome": "Laura Shigihara - Graze The Roof",
+                "base": 2,
+                "dificuldade": "1,2,3,4"
+            },
+            {
+                "nome": "Slipknot - Eyeless",
+                "base": 0,
+                "dificuldade": "1,2,3,4"
+            },
+            {
+                "nome": "Slipknot - Psychosocial",
+                "base": 0,
+                "dificuldade": "1,2,3,4"
+            },
+            {
+                "nome": "Slipknot - Snuff",
+                "base": 0,
+                "dificuldade": "1,2,3,4"
+            },
+            {
+                "nome": "System of a Down - Aerials",
+                "base": 0,
+                "dificuldade": "1,2,3,4"
+            },
+            {
+                "nome": "System of a Down - Hypnotize",
+                "base": 0,
+                "dificuldade": "1,2,3,4"
+            },
+            {
+                "nome": "System of a Down - Toxicity",
+                "base": 0,
+                "dificuldade": "1,2,3,4"
+            },
+            {
+                "nome": "Xi - Freedom Dive",
+                "base": 0,
+                "dificuldade": "1,2,3,4"
+            },
+            {
+                "nome": "Ednaldo Pereira - God Is Good Metal",
+                "base": 2,
+                "dificuldade": "4"
+            },
+            {
+                "nome": "Sonata Arctica - Revontulet",
+                "base": 2,
+                "dificuldade": "4"
+            },
+            {
+                "nome": "Hechizeros Band - El Sonidito",
+                "base": 0,
+                "dificuldade": "4"
+            },
+            {
+                "nome": "Hydrogen - Hotline Gensokyo",
+                "base": 1,
+                "dificuldade": "4"
+            },
+            {
+                "nome": "MASTER BOOT RECORD - Crash",
+                "base": 4,
+                "dificuldade": "4"
+            },
+            {
+                "nome": "Slipknot - Psychosocial (Epic Remastered Very Cool) (HQ Audio)",
+                "base": 1,
+                "dificuldade": "4"
+            },
+            {
+                "nome": "Azazel - Can't Stop Coming",
+                "base": 2,
+                "dificuldade": "1,2,3,4"
+            },
+            {
+                "nome": "Camellia - First Town of This Journey",
+                "base": 4,
+                "dificuldade": "1,2,3,4"
+            },
+            {
+                "nome": "Clown Core Solo Medley",
+                "base": 5,
+                "dificuldade": "4"
+            },
+            {
+                "nome": "Leaf - mopemope",
+                "base": 3,
+                "dificuldade": "1,2,3,4"
+            },
+            {
+                "nome": "Metallica - One",
+                "base": 1,
+                "dificuldade": "1,2,3,4"
+            },
+            {
+                "nome": "Queen - Killer Queen",
+                "base": 1,
+                "dificuldade": "1,2,3,4"
+            }
+        ],
+        "videoId": "",
+        "rainbow": true
+    }
+]
