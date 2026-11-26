@@ -1,1 +1,14 @@
-[]
+[
+    {
+        "foto": "images/Rishi.png",
+        "nome": "Rishi_LockeD",
+        "descricao": "Criador da comunidade Moriya PvE",
+        "link": "https://www.youtube.com/@rishi_locked"
+    },
+    {
+        "foto": "images/Alvaro.png",
+        "nome": "The Alvaro",
+        "descricao": "Participante do evento",
+        "link": "#"
+    }
+]
