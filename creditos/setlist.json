@@ -18,6 +18,12 @@
         "link": "https://customsongscentral.com/cth1r/"
     },
     {
+        "foto": "images/cth3.png",
+        "nome": "Carpal Tunnel Hero 3",
+        "descricao": "700 músicas. Anos de trabalho. O capítulo final da lendária série. A maior setlist de Clone Hero de todos os tempos. Este é Carpal Tunnel Hero 3.",
+        "link": "https://customsongscentral.com/carpal-tunnel-hero-3/"
+    },
+    {
         "foto": "images/attentionspan.png",
         "nome": "Attention Span",
         "descricao": "Não queremos desperdiçar seu precioso tempo, então vamos direto ao assunto: mais de 330 partituras curtas, todas organizadas para o seu deleite enquanto você rola a tela sem parar! (E se você quiser ouvi-las, em vez de ficar olhando para o menu de músicas por uma hora, você também pode!)",
@@ -35,12 +41,23 @@
         "descricao": "Temos o orgulho de apresentar Marathon Hero, com mais de 17 horas de música. Cada música desta seleção tem 10 minutos ou mais, sendo a mais longa com mais de 100 minutos. Esperamos que vocês gostem de ouvi-la tanto quanto nós gostamos de criá-la.",
         "link": "https://customsongscentral.com/marathon-hero/"
     },
-
     {
         "foto": "images/csc.png",
         "nome": "Custom Songs Central",
         "descricao": "...é o principal portal e coletivo da comunidade dedicado à criação e distribuição gratuita de pacotes de músicas (song packs) e setlists personalizados para o jogo de ritmo Clone Hero (também compatíveis com o YARG).",
         "link": "https://customsongscentral.com"
+    },
+    {
+        "foto": "images/antihero.png",
+        "nome": "Anti Hero",
+        "descricao": "...Após 4 meses, 402 submissões às paradas musicais, 13 álbuns completos, muita polêmica e muito trabalho duro, Anti Hero já está disponível para download! Além de sua extensa lista de músicas, o álbum também conta com áudio de alta qualidade, metadados completos, músicas originais e diversas batalhas de guitarra para desafiar até os guitarristas mais ambiciosos da comunidade.",
+        "link": "https://customsongscentral.com"
+    },
+    {
+        "foto": "images/wccg.png",
+        "nome": "World Charts Community",
+        "descricao": "#",
+        "link": "#"
     },
     {
         "foto": "images/goulart.png",
@@ -55,9 +72,27 @@
         "link": "https://www.youtube.com/@AngevilHero"
     },
     {
+        "foto": "images/sad_normie.png",
+        "nome": "Sad Normie",
+        "descricao": "Criador da chard conhecido: Jun Ishikawa - Candy Constellation (Kirby & the Amazing Mirror)",
+        "link": "#"
+    },
+    {
+        "foto": "images/jrb.png",
+        "nome": "J-Rock Band Project",
+        "descricao": "#",
+        "link": "#"
+    },
+    {
         "foto": "images/ghvh.png",
         "nome": "Guitar Hero: Van Halen",
         "descricao": "...é um jogo eletrônico de ritmo lançado em dezembro de 2009 pela Activision, sendo o terceiro título da franquia focado exclusivamente em uma única banda (após Aerosmith e Metallica)",
+        "link": "#"
+    },
+    {
+        "foto": "images/gh1.png",
+        "nome": "Guitar Hero",
+        "descricao": "...é um jogo eletrônico de ritmo lançado originalmente para PlayStation 2 em 8 de novembro de 2005, desenvolvido pela Harmonix e publicado pela RedOctane. É o primeiro título da franquia e ficou famoso por acompanhar um controle em formato de guitarra inspirado na Gibson SG.",
         "link": "#"
     },
     {
@@ -65,7 +100,53 @@
         "nome": "Guitar Hero III: Legends of Rock",
         "descricao": "...é um jogo eletrônico de ritmo lançado em 2007 pela Activision, sendo o terceiro título da franquia Guitar Hero.",
         "link": "#"
+    },
+    {
+        "foto": "images/rb1.png",
+        "nome": "Rock Band 1",
+        "descricao": "Rock Band (2007): Estabeleceu o formato de banda completa e o modelo de músicas adicionais por download, reunindo clássicos do rock, punk e metal.",
+        "link": "#"
+    },
+    {
+        "foto": "images/rb1dlc.png",
+        "nome": "Rock Band 1 DLC",
+        "descricao": "Conteúdo adicional para Rock Band 1, incluindo novas músicas e personagens.",
+        "link": "#"
+    },
+    {
+        "foto": "images/rb2.png",
+        "nome": "Rock Band 2",
+        "descricao": "Rock Band 2 (2008): Expandiu o modo carreira, trouxe melhorias nas mecânicas e manteve retrocompatibilidade com a maior parte das músicas do primeiro jogo e dos DLCs.",
+        "link": "#"
+    },
+    {
+        "foto": "images/rb2dlc.png",
+        "nome": "Rock Band 2 DLC",
+        "descricao": "Conteúdo adicional para Rock Band 2, incluindo novas músicas e personagens.",
+        "link": "#"
+    },
+    {
+        "foto": "images/rb3.png",
+        "nome": "Rock Band 3",
+        "descricao": "Rock Band 3 (2010): Introduziu suporte a teclados, harmonias vocais de três partes e modos Pro mais próximos de instrumentos reais, além de contar com o programa Rock Band Network (faixas criadas e publicadas com apoio da comunidade/parceiros).",
+        "link": "#"
+    },
+    {
+        "foto": "images/rb3dlc.png",
+        "nome": "Rock Band 3 DLC",
+        "descricao":"Conteúdo adicional para Rock Band 3, incluindo novas músicas e personagens.", 
+        "link": "#"
+    },
+    {
+        "foto": "images/rb4.png",
+        "nome": "Rock Band 4",
+        "descricao": "Rock Band 4 (2015): Levou a série para a geração PlayStation 4 e Xbox One e manteve a compatibilidade com grande parte do catálogo de DLCs anteriores.",
+        "link": "#"
+    },
+    {
+        "foto": "images/rb4dlc.png",
+        "nome": "Rock Band 4 DLC",
+        "descricao":"Conteúdo adicional para Rock Band 4, incluindo novas músicas e personagens.", 
+        "link": "#"
     }
-
-
 ]
